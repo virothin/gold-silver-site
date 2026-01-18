@@ -44,12 +44,35 @@
             border-bottom: 1px solid #222;
         }
 
-        .logo {
-            font-family: "Playfair Display", serif;
-            font-size: 20px;
-            letter-spacing: 1px;
-            color: var(--gold);
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dvag-logo {
+    height: 32px;
+    width: auto;
+}
+
+.logo-text-block {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-main {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+.logo-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
 
         nav a {
             color: var(--text-muted);
@@ -517,7 +540,14 @@
 <body>
 
 <header>
-    <div class="logo">Naresh Virothi | Gold & Silver</div>
+    <div class="logo">
+        <img src="DVAG-LOGO.png" class="dvag-logo" alt="DVAG Logo">
+        <div class="logo-text-block">
+            <span class="logo-main">Naresh Virothi | Gold & Silver</span>
+            <span class="logo-sub">in association with Geiger Edelmetalle</span>
+        </div>
+    </div>
+
     <nav>
         <a href="#home">Home</a>
         <a href="#gold">Gold</a>
@@ -533,36 +563,24 @@
 
 <!-- HERO -->
 <section id="home" class="hero fade-in">
+    <h1>Welcome. Empower your financial freedom with Gold & Silver.</h1>
 
-  <!-- PREMIUM BRANDING BAR -->
-  <div class="branding-premium">
-    <img src="DVAG-LOGO.png" alt="DVAG Logo" class="dvag-logo">
+    <p class="tagline">
+        Physical gold and silver – transparent, secure, and personally guided.  
+        For people who value real assets.
+    </p>
 
-    <div class="brand-text-block">
-      <div class="brand-main">Naresh Virothi | Gold & Silver</div>
-      <div class="brand-sub">in association with Geiger Edelmetalle</div>
-    </div>
-  </div>
+    <p class="tax-highlight">
+        Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
+    </p>
 
-  <h1>Welcome. Empower your financial freedom with Gold & Silver.</h1>
+    <button class="btn" onclick="document.getElementById('gold').scrollIntoView({behavior:'smooth'})">
+        Explore Gold
+    </button>
 
-  <p class="tagline">
-    Physical gold and silver – transparent, secure, and personally guided.  
-    For people who value real assets.
-  </p>
-
-  <p class="tax-highlight">
-    Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
-  </p>
-
-  <button class="btn" onclick="document.getElementById('gold').scrollIntoView({behavior:'smooth'})">
-    Explore Gold
-  </button>
-
-  <button class="btn" onclick="document.getElementById('silver').scrollIntoView({behavior:'smooth'})">
-    Explore Silver
-  </button>
-
+    <button class="btn" onclick="document.getElementById('silver').scrollIntoView({behavior:'smooth'})">
+        Explore Silver
+    </button>
 </section>
 
 
