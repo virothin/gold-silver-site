@@ -174,13 +174,98 @@
     margin-bottom: 16px;
 }
 
+/* NEW TAX HEADLINE STYLE */
+.tax-headline {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    color: var(--gold);
+    margin: 30px auto 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
 
-        .hero p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            color: var(--text-muted);
-            font-size: 16px;
-        }
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* HERO IMAGE ABOVE HEADLINE */
+.hero-top-image {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  animation: fadeInHero 1.4s ease-out forwards;
+}
+
+/* Soft spotlight behind the image */
+.hero-image-spotlight {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(212, 175, 55, 0.25) 0%,
+    rgba(212, 175, 55, 0.10) 40%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  filter: blur(28px);
+  z-index: 0;
+}
+
+/* Image styling + floating effect */
+.hero-top-image img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  animation: floatyHero 6s ease-in-out infinite;
+}
+
+/* Fade-in effect */
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating premium effect */
+@keyframes floatyHero {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE SPACING IMPROVEMENTS */
+@media (max-width: 768px) {
+  .hero-top-image {
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .hero-top-image img {
+    border-radius: 8px;
+  }
+}
+
 
         /* HERO IMAGES – ULTRA LUXURY */
         .hero-images {
@@ -523,18 +608,27 @@
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 14px 20px;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            .hero h1 {
-                font-size: 30px;
-            }
-            .section {
-                padding: 60px 20px;
-            }
-        }
+    header {
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    /* MOBILE VERSION OF TAX HEADLINE */
+    .tax-headline {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -563,16 +657,21 @@
 
 <!-- HERO -->
 <section id="home" class="hero fade-in">
-    <h1>Welcome. Empower your financial freedom with Gold & Silver.</h1>
+
+  <div class="hero-top-image">
+    <div class="hero-image-spotlight"></div>
+    <img src="Gold-Silver.png" alt="Gold and Silver Products">
+  </div>
+
+  <h1>Welcome. Empower your financial freedom with Gold & Silver.</h1>
+
 
     <p class="tagline">
         Physical gold and silver – transparent, secure, and personally guided.  
         For people who value real assets.
     </p>
 
-    <p class="tax-highlight">
-        Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
-    </p>
+   <h2 class="tax-headline">100% TAX‑FREE ON CAPITAL GAINS</h2>
 
     <button class="btn" onclick="document.getElementById('gold').scrollIntoView({behavior:'smooth'})">
         Explore Gold
@@ -611,10 +710,14 @@
 <section id="gold" class="section fade-in">
     <div class="product">
         <h2>Gold – Stability in Uncertain Times</h2>
+	
         <p class="product-subline">
             Whether monthly savings or one-time purchase – you decide how to build your gold wealth.
         </p>
-
+<p class="tax-highlight"> 
+		Tax advantage: Under current German tax rules, long-term physical gold and silver can offer tax-free capital gains.
+</p>
+ 
         <div class="product-grid">
             <div class="product-card">
                 <h3>Gold Savings Plan</h3>
